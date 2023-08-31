@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
 
-        <!--삳단바-->
+        <!--상단바-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main_title"
         android:layout_width="match_parent"
@@ -31,16 +31,17 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/main_iconDown"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:src="@drawable/icon_down"
             android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBotomOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@+id/main_name"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/main_bell"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/icon_noti"
@@ -53,15 +54,18 @@
 
         <!--recycleView start-->
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_title" />
 
-    <!--플러딩 액션버튼 start
+    <!--플러딩 액션버튼 start-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/up_scroll_act"
+        android:contentDescription="floatingBtn"
+        android:id="@+id/float_scroll_act"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -79,7 +83,6 @@
         android:tint="@null">
 
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
-    플러팅 엑션버튼 end-->
 
 
  </androidx.constraintlayout.widget.ConstraintLayout>

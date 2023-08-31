@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("kotlin-parcelize")
 }
 
 android {
@@ -14,8 +15,8 @@ android {
 
     defaultConfig {
         applicationId = "com.android.applemarket"
-        minSdk = 31
-        targetSdk = 33
+        minSdk = 30
+        targetSdk = 32
         versionCode = 1
         versionName = "1.0"
 
@@ -42,6 +43,7 @@ android {
 
 dependencies {
 
+    implementation ("androidx.recyclerview:recyclerview:1.3.1")
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")

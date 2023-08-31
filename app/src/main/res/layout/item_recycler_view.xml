@@ -3,29 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/p_item_cardView"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
+        android:id="@+id/item_cardView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/p_item_image"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:id="@+id/item_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/sample1" />
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/first_item_title"
+        android:id="@+id/item_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -37,36 +40,36 @@
         android:ellipsize="end"
         android:maxLines="2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/p_item_cardView"
+        app:layout_constraintStart_toEndOf="@+id/item_cardView"
         app:layout_constraintTop_toTopOf="parent"
         />
 
     <TextView
-        android:id="@+id/first_item_address"
+        android:id="@+id/item_address"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="8dp"
         android:text="서울 인사동"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/p_item_cardView"
-        app:layout_constraintTop_toBottomOf="@+id/first_item_title" />
+        app:layout_constraintStart_toEndOf="@+id/item_cardView"
+        app:layout_constraintTop_toBottomOf="@+id/item_title" />
 
     <TextView
-        android:id="@+id/first_item_price"
+        android:id="@+id/item_price"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="8dp"
         android:textStyle="bold"
         android:text="30,000원"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/p_item_cardView"
-        app:layout_constraintTop_toBottomOf="@+id/first_item_address" />
+        app:layout_constraintStart_toEndOf="@+id/item_cardView"
+        app:layout_constraintTop_toBottomOf="@+id/item_address" />
 
 
     <!--하트/체팅 아이콘 레이아웃-->
@@ -74,11 +77,11 @@
         android:id="@+id/linearLayout"
         android:layout_width="100dp"
         android:layout_height="30dp"
-        android:layout_marginTop="-15dp"
-        android:background="@color/white"
         android:gravity="center"
+        android:layout_marginTop="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/first_item_price">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:layout_width="20sp"
@@ -88,12 +91,14 @@
             android:src="@drawable/icon_chat" />
 
         <TextView
+            android:id="@+id/item_chatCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10" />
 
 
         <ImageView
+            android:id="@+id/item_likeIcon"
             android:layout_width="18sp"
             android:layout_height="18sp"
             android:layout_marginStart="5dp"
@@ -104,6 +109,7 @@
             />
 
         <TextView
+            android:id="@+id/item_likeCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10" />
@@ -115,9 +121,10 @@
         android:layout_width="match_parent"
         android:layout_height="1.5dp"
         android:background="@color/grey_300"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        android:layout_marginTop="5dp"
-        />
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_cardView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
