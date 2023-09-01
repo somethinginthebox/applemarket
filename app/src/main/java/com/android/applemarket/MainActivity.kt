@@ -183,7 +183,7 @@ class MainActivity : AppCompatActivity() {
         //intent 객체 넘기기 //key값은 object폴더에 constant로.
         adapter.itemClick = object : ItemAdapter.ItemClick {
             override fun onClick(view: View, position: Int) {
-                Log.d("check","onclick")
+                Log.d("check","onclickintent")
                 val intent = Intent(this@MainActivity, DetailActivity::class.java)
                 intent.putExtra(Constants.ITEM_INDEX, position)
                 intent.putExtra(Constants.ITEM_OBJECT, dataList[position])
@@ -193,6 +193,7 @@ class MainActivity : AppCompatActivity() {
 
         adapter.itemLongClick = object : ItemAdapter.ItemLongClick {
             override fun onLongClick(view: View, position: Int) {
+                Log.d("delete","product delete try")
                 val ad = AlertDialog.Builder(this@MainActivity)
                 ad.setIcon(R.drawable.icon_chat)
                 ad.setTitle("상품 삭제")
@@ -211,6 +212,7 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.mainBell.setOnClickListener {
+            Log.d("notificaiton","알림")
             notification()
 
         }
@@ -225,6 +227,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                Log.d("floating","float_action")
                 super.onScrollStateChanged(recyclerView, newState)
                 if (!binding.recyclerView.canScrollVertically(-1)
                     && newState == RecyclerView.SCROLL_STATE_IDLE
@@ -252,6 +255,7 @@ class MainActivity : AppCompatActivity() {
         //하트처리
         activityResultLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+                Log.d("hearEvent","heartEvent")
                 if (it.resultCode == RESULT_OK) {
                     val itemInex = it.data?.getIntExtra("itemIndex", 0) as Int
                     val aLike = it.data?.getBooleanExtra("aLike", false) as Boolean
@@ -274,6 +278,7 @@ class MainActivity : AppCompatActivity() {
 
     //back button
     override fun onBackPressed() {
+        Log.d("shutdown","user shut down try")
         val ad = AlertDialog.Builder(this)
         ad.setIcon((R.drawable.icon_chat))
         ad.setTitle("종료")

@@ -64,6 +64,7 @@ class DetailActivity : AppCompatActivity() {
         }
 
         binding.detailLinearView.setOnClickListener {
+            Log.d("heartTouch","user heart touch")
             if (!aLike) {
                 binding.detailLike.setImageResource(R.drawable.icon_heart_f)
                 Snackbar.make(binding.constraintLayout3, "관심목록에 추가되었습니다", Snackbar.LENGTH_SHORT)
@@ -76,6 +77,7 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
+
     fun exit() {
         val intent = Intent(this, MainActivity::class.java).apply {
             putExtra("itemIndex", itemPosition)
@@ -87,6 +89,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
+        Log.d("heartLog","heartLog")
         exit()
     }
 }
