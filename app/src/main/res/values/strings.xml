@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AppleMarket</string>
+
+    <!--메인간단정보-->
+    <string name="semi_dong">성북동</string>
+    
+    <!--디테일-->
+    <string name="manner_temper"><u>매너 온도</u></string>
+
+
+
+</resources>
